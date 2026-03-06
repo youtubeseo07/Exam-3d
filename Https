@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Cartoon Generator</title>
+<style>
+body{
+font-family: Arial;
+background:#1e1e2f;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+textarea{
+width:80%;
+height:120px;
+font-size:18px;
+padding:10px;
+border-radius:10px;
+}
+
+button{
+padding:12px 25px;
+font-size:18px;
+background:#ff9800;
+border:none;
+border-radius:10px;
+cursor:pointer;
+margin-top:10px;
+}
+
+.cartoon{
+font-size:40px;
+margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎬 AI Cartoon Hindi Voice</h1>
+
+<p>अपनी कहानी लिखो और कार्टून आवाज सुनो</p>
+
+<textarea id="story" placeholder="यहाँ हिंदी कहानी लिखो..."></textarea>
+<br>
+
+<button onclick="speakStory()">🎤 Cartoon Voice</button>
+
+<div class="cartoon">🐰</div>
+
+<script>
+
+function speakStory(){
+
+let text=document.getElementById("story").value;
+
+let speech=new SpeechSynthesisUtterance();
+
+speech.text=text;
+
+speech.lang="hi-IN";
+
+speech.rate=0.9;
+
+speech.pitch=1.3;
+
+speechSynthesis.speak(speech);
+
+}
+
+</script>
+
+</body>
+</html>
